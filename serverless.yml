@@ -60,6 +60,8 @@ resources:
             AttributeType: S
           - AttributeName: productoID
             AttributeType: S
+          - AttributeName: nombre
+            AttributeType: S  # Añadido para ProductoIndex
         KeySchema:
           - AttributeName: tenantID
             KeyType: HASH
