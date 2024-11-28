@@ -2,13 +2,13 @@ const AWS = require("aws-sdk");
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = async (event) => {
-    const { tenantID, productoID } = event.queryStringParameters || {};
+    const { tenantID, tiendaID } = event.queryStringParameters || {};
     const params = {
         TableName: "Productos",
-        KeyConditionExpression: "tenantID = :tenantID AND productoID = :productoID",
+        KeyConditionExpression: "tenantID = :tenantID AND tiendaID = :tiendaID",
         ExpressionAttributeValues: {
             ":tenantID": tenantID,
-            ":productoID": productoID,
+            ":tiendaID": tiendaID,
         },
     };
 
